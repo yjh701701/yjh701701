@@ -1,0 +1,16 @@
+addressables async 비동기로 작동하므로 동기처럼 사용 위한 대기 WaitForCompoletion();
+
+#예시
+ var op = Addressables.LoadAssetAsync<Sprite>(strAssetPath);
+            op.Completed += (handle) =>
+            {
+                if (handle.Status == AsyncOperationStatus.Succeeded)
+                {
+                    if (!spriteAssetData.ContainsKey(strAssetPath))
+                    {
+                        spriteAssetData.Add(strAssetPath, handle.Result);
+                    }
+                    resultSprite = spriteAssetData[strAssetPath];
+                }
+            };
+            op.WaitForCompletion();
