@@ -22,4 +22,3 @@ jobs:
           git config user.email yjh701701@naver.com
           git add -A .
           git commit -m "generated"
-          git push
