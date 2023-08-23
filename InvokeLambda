@@ -1,0 +1,9 @@
+    void InvokeLambda(Action lambda, float delay)
+    {
+        StartCoroutine(InvokeLambdaCoroutine(lambda, delay));
+    }
+    IEnumerator InvokeLambdaCoroutine(Action lambda, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        lambda.Invoke();
+    }
