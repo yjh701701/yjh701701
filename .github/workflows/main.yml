@@ -23,13 +23,13 @@ jobs:
           git config user.email yjh701701@naver.com
           git add -A .
           git commit -m "3DautoCommit"
-          git push origin HEAD:feature-branch
+          git push origin main
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "Automated Pull Request"
-          title: "Automated Pull Request"
-          body: "This is an automated pull request."
-          branch: feature-branch
+#      - name: Create Pull Request
+#        uses: peter-evans/create-pull-request@v3
+#        with:
+#          token: ${{ secrets.GITHUB_TOKEN }}
+#          commit-message: "Automated Pull Request"
+#          title: "Automated Pull Request"
+#          body: "This is an automated pull request."
+#          branch: feature-branch
